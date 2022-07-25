@@ -17,7 +17,7 @@ function ProductContext() {
                 })
         }
         products();
-    })
+    },[])
 
     return (
         <div id="Card-container">
