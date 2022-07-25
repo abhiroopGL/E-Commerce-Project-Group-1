@@ -1,7 +1,7 @@
 import './App.css';
-import Display from './Display';
-import Nav from './Nav';
-import ProductList from './ProductList';
+import Display from './Components/Display';
+import Nav from './Components/Nav';
+import ProductList from './Components/ProductList';
 
 function App() {
   return (
