@@ -1,11 +1,14 @@
 import './App.css';
+import Display from './Display';
+import Nav from './Nav';
+import ProductList from './ProductList';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-       Hello
-      </header>
+      <Nav/>
+      <Display/>
+      <ProductList/>
     </div>
   );
 }
