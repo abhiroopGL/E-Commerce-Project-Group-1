@@ -3,17 +3,18 @@ import Display from './Components/Display';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
 import ProductList from './Components/ProductList';
-import ProductContext from './contexts/productContext';
+import { ProductProvider } from './contexts/productContext';
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <Display/>
-      <ProductContext/>
-      <ProductList/>
-      <Footer />
-    </div>
+    <ProductProvider>
+      <div className="App">
+        <Header />
+        <Display />
+        <ProductList />
+        <Footer />
+      </div>
+    </ProductProvider>
   );
 }
 //this is commment
