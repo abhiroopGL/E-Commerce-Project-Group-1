@@ -11,8 +11,9 @@ function App() {
       <Display/>
       <ProductContext/>
       <ProductList/>
+      <Footer />
     </div>
   );
 }
-
+//this is commment
 export default App;

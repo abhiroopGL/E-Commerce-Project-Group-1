@@ -8,5 +8,4 @@ function Display() {
     </Container>
   )
 }
-
-export default Display
+export default Display;
