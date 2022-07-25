@@ -45,5 +45,4 @@ function Display() {
   </Carousel>
   )
 }
-//comment
 export default Display;
