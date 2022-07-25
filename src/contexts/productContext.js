@@ -26,10 +26,7 @@ function ProductContext() {
                     <Card key={item.id} style={{ width: '40vh',diplay:'flex',flexDirection:'column', alignItems:'center',marginTop:'3vh'}}>
                         <Card.Img variant="top" src={item.image} style={{height:'35vh',width:'28vh'}} />
                         <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
-                            <Card.Text>
-                                {item.title}
-                            </Card.Text>
+                            <Card.Title>{item.title}</Card.Title>
                             <Button variant="primary" style={{display:'flex', flexDirection:'column', justifyContent:'flex-end'}}>Add to Cart</Button>
                         </Card.Body>
                     </Card>
