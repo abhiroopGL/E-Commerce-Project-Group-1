@@ -1,13 +1,14 @@
 import './App.css';
-import Display from './Display';
-import Nav from './Nav';
-import ProductList from './ProductList';
+import Display from './Components/Display';
+import Header from './Components/Header'
+import Footer from './Components/Footer'
+import ProductList from './Components/ProductList';
 import ProductContext from './contexts/productContext';
 
 function App() {
   return (
     <div className="App">
-      <Nav/>
+      <Header/>
       <Display/>
       <ProductContext/>
       <ProductList/>
