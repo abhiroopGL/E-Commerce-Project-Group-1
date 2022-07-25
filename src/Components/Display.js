@@ -6,7 +6,7 @@ function Display() {
   return (
     <Carousel>
     <Carousel.Item>
-      <img
+      <img id='carouselImg'
         className="d-block w-100"
         src="https://www.w3schools.com/images/w3schools_green.jpg"
         alt="First slide"
@@ -16,11 +16,11 @@ function Display() {
         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
       </Carousel.Caption>
     </Carousel.Item>
-    <Carousel.Item>
-      <img
+    <Carousel.Item >
+    <img id='carouselImg'
         className="d-block w-100"
-        src="./img2.jpg"
-        alt="Second slide"
+        src="https://www.w3schools.com/images/w3schools_green.jpg"
+        alt="First slide"
       />
 
       <Carousel.Caption>
@@ -29,10 +29,10 @@ function Display() {
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
-      <img
+    <img id='carouselImg'
         className="d-block w-100"
-        src="img3.jpg"
-        alt="Third slide"
+        src="https://www.w3schools.com/images/w3schools_green.jpg"
+        alt="First slide"
       />
 
       <Carousel.Caption>
