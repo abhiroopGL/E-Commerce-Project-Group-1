@@ -3,8 +3,6 @@ import Display from './Components/Display';
 import Footer from './Components/Footer';
 import Nav from './Components/Nav';
 import Header from './Components/Header';
-import Header from './Components/Header'
-import Footer from './Components/Footer';
 import ProductList from './Components/ProductList';
 import ProductContext from './contexts/productContext';
 
