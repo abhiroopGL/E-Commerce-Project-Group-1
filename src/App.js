@@ -1,7 +1,8 @@
 import './App.css';
 import Display from './Components/Display';
-import Header from './Components/Header'
-import Footer from './Components/Footer'
+import Footer from './Components/Footer';
+import Nav from './Components/Nav';
+import Header from './Components/Header';
 import ProductList from './Components/ProductList';
 import ProductContext from './contexts/productContext';
 
