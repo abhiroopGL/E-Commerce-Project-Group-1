@@ -1,5 +1,11 @@
 .App {
   text-align: center;
 }
+#Card-container{
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
 
 
