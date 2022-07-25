@@ -3,6 +3,11 @@
 }
 
 #footer{
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  padding: 20px 0px;
+  height: 65px;
   color: white;
   background-color: midnightblue;
 }
