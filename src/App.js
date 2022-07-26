@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './Components/Login';
 import SignUp from './Components/SignUp';
 import ForgotPassword from './Components/ForgotPassword';
+import ProductDetails from './Components/ProductDetails';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/forgot-password' element={<ForgotPassword />} />
+          <Route path='/product-details/:id' element={<ProductDetails />} />
         </Routes>
       </ProductProvider>
     </Router>
