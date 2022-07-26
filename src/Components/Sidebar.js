@@ -6,7 +6,7 @@ import {ProductContext} from '../contexts/productContext'
 function Sidebar() {
     const closeSidebar = () => setShowSidebar(false);
 
-    const { showSidebar, setShowSidebar } = useContext(ProductContext);
+    const { showSidebar, setShowSidebar, currentUser } = useContext(ProductContext);
     return (
         <>
             <Container className='p-4'>
@@ -16,6 +16,7 @@ function Sidebar() {
                     </Offcanvas.Header>
                     <Offcanvas.Body>
                         Some dummy text, we can have any text or element at at this place.
+                        {currentUser}
                     </Offcanvas.Body>
                 </Offcanvas>
             </Container>

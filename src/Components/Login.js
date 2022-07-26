@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ProductContext } from "../contexts/productContext";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 const Login = () => {
-  const { users } = useContext(ProductContext);
+  const { users, setCurrentUser } = useContext(ProductContext);
   const userEmailArr = users.map((user) => user.email);
   const userPassArr = users.map((user) => user.password);
   const navigate = useNavigate();
@@ -26,6 +26,7 @@ const Login = () => {
       const checkUserPassFromList = userPassArr.includes(currentPass);
       if (checkUserPassFromList) {
         setError2(false);
+        setCurrentUser(currentEmail);
         navigate("/");
       } else {
         setError2(true);
