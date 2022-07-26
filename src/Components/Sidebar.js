@@ -9,9 +9,9 @@ function Sidebar() {
     const { showSidebar, setShowSidebar } = useContext(ProductContext);
     return (
         <>
-            <Container className='p-4'>
-                <Offcanvas show={showSidebar} onHide={closeSidebar}>
-                    <Offcanvas.Header closeButton>
+            <Container className='p-4 bg-dark' >
+                <Offcanvas show={showSidebar} onHide={closeSidebar} className = "bg-dark text-white">
+                    <Offcanvas.Header closeButton >
                         <Offcanvas.Title>Sidebar Title</Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
