@@ -48,7 +48,6 @@ const Login = () => {
     setPasswordType("password");
     setPassEye(true);
   };
-  console.log(currentUserId)
   return (
     <>
       {loading && (

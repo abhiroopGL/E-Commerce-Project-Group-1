@@ -27,7 +27,6 @@ export const ProductProvider = (props) => {
         const searchUsers = async () => {
             await axios.get('https://fakestoreapi.com/users')
                 .then((res) => {
-                    console.log(res.data);
                     setUsers(res.data);
                 })
                 .catch((err) => {

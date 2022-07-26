@@ -6,7 +6,6 @@ import {Link} from "react-router-dom";
 function ProductList() {
 
     const {productList} = useContext(ProductContext)
-    console.warn(productList)
     return (
         <div id="Card-container">
             {
@@ -25,4 +24,4 @@ function ProductList() {
     )
 }
 
-export default ProductList;
+export default React.memo(ProductList);
