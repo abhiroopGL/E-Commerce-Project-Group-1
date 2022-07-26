@@ -8,38 +8,33 @@ function Display() {
     <Carousel.Item>
       <img id='carouselImg'
         className="d-block w-100"
-        src="https://www.w3schools.com/images/w3schools_green.jpg"
+        src="https://placeimg.com/1080/500/fashion"
         alt="First slide"
       />
       <Carousel.Caption>
-        <h3>First slide label</h3>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <h3>Find your desirable product</h3>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item >
     <img id='carouselImg'
         className="d-block w-100"
-        src="https://www.w3schools.com/images/w3schools_green.jpg"
-        alt="First slide"
+        src="https://placeimg.com/1080/500/market"
+        alt="Second slide"
       />
 
       <Carousel.Caption>
         <h3>Second slide label</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
     <img id='carouselImg'
         className="d-block w-100"
-        src="https://www.w3schools.com/images/w3schools_green.jpg"
-        alt="First slide"
+        src="https://placeimg.com/1080/500/clothes"
+        alt="Third slide"
       />
 
       <Carousel.Caption>
-        <h3>Third slide label</h3>
-        <p>
-          Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-        </p>
+        <h3>Many great deals</h3>
       </Carousel.Caption>
     </Carousel.Item>
   </Carousel>
