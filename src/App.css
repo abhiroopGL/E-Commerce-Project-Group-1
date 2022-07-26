@@ -22,3 +22,7 @@
 #carouselImg {
   height: 500px;
 }
+.link{
+  text-decoration: none;
+  color: whitesmoke;
+}
