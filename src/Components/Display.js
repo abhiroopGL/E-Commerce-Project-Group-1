@@ -23,7 +23,7 @@ function Display() {
       />
 
       <Carousel.Caption>
-        <h3>Second slide label</h3>
+        <h3>All Products are at Discounted rate</h3>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>

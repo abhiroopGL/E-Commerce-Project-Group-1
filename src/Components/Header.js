@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -6,12 +6,21 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { CartPlus } from "react-bootstrap-icons";
+import { ProductContext } from '../contexts/productContext';
 
 function Header() {
+
+  const { setShowSidebar} = useContext(ProductContext);
+
+  const sidebarHandler = () => {
+    setShowSidebar(true);
+  }
+
   return (
-    <Navbar bg="light" expand="lg" id="header">
+    <Navbar bg="dark" variant="dark" expand="lg" id="header">
       <Container fluid>
-        <Navbar.Brand href="#">Fake Shop</Navbar.Brand>
+        
+        <Navbar.Brand href="#" onClick={sidebarHandler}>MyExcelShop.in</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -32,7 +41,7 @@ function Header() {
                 Something else here
               </NavDropdown.Item>
             </NavDropdown>
-           
+
           </Nav>
           <Form className="d-flex">
             <Form.Control
@@ -43,7 +52,7 @@ function Header() {
             />
             <Button variant="outline-success">Search</Button>
           </Form>
-          <Nav.Link href = "#"><CartPlus size={36} className = "m-10" color='green'/></Nav.Link>
+          <Nav.Link href = "#"><CartPlus size={30} width='15vh' className = "m-10" color='green'/></Nav.Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>
