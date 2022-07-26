@@ -17,10 +17,10 @@ function Header() {
   }
 
   return (
-    <Navbar bg="light" expand="lg" id="header">
+    <Navbar bg="dark" variant="dark" expand="lg" id="header">
       <Container fluid>
         
-        <Navbar.Brand href="#" onClick={sidebarHandler}>Fake Shop</Navbar.Brand>
+        <Navbar.Brand href="#" onClick={sidebarHandler}>MyExcelShop.in</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
