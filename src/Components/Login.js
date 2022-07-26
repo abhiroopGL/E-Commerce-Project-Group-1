@@ -45,7 +45,6 @@ const Login = () => {
     setPasswordType("password");
     setPassEye(true);
   };
-  console.log("users", users);
   return (
     <>
       {loading && (

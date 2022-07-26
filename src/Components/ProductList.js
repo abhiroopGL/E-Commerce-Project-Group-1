@@ -14,6 +14,7 @@ function ProductList() {
                         <Card.Img variant="top" src={item.image} style={{ height: '35vh', width: '28vh' }} />
                         <Card.Body style={{diplay: 'flex', flexDirection: 'column', justifyContent:'center', alignItems:'center'}}>
                             <Card.Title>{(item.title).slice(0, 18).concat("...")}</Card.Title>
+                            <p>₹ {item.price}</p>
                             <Button variant="primary">Add to Cart</Button>
                         </Card.Body>
                     </Card>
