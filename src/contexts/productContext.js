@@ -8,7 +8,7 @@ export const ProductProvider = (props) => {
 
     const [productList, setProductList] = useState([]);
     const [users, setUsers] = useState([]);
-    
+    const [currentUserId, setCurrentUserId] = useState(null);
     const [showSidebar,setShowSidebar] = useState(false);
 
 
@@ -27,7 +27,6 @@ export const ProductProvider = (props) => {
         const searchUsers = async () => {
             await axios.get('https://fakestoreapi.com/users')
                 .then((res) => {
-                    console.log(res.data);
                     setUsers(res.data);
                 })
                 .catch((err) => {
@@ -44,6 +43,8 @@ export const ProductProvider = (props) => {
         users,
         showSidebar,
         setShowSidebar,
+        currentUserId,
+        setCurrentUserId
     }
 
     return (
