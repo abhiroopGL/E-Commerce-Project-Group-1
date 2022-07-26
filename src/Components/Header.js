@@ -43,7 +43,7 @@ function Header() {
             />
             <Button variant="outline-success">Search</Button>
           </Form>
-          <Nav.Link href = "#"><CartPlus size={36} className = "m-10" color='green'/></Nav.Link>
+          <Nav.Link href = "#"><CartPlus size={30} width='15vh' className = "m-10" color='green'/></Nav.Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>
