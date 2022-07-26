@@ -3,12 +3,13 @@ import React, { createContext, useEffect, useState } from 'react';
 
 
 export const ProductContext = createContext();
+    
 
 export const ProductProvider = (props) => {
 
     const [productList, setProductList] = useState([]);
     const [users, setUsers] = useState([]);
-    
+    const [currentUser, setCurrentUser ] = useState(null)
     const [showSidebar,setShowSidebar] = useState(false);
 
 
@@ -44,6 +45,8 @@ export const ProductProvider = (props) => {
         users,
         showSidebar,
         setShowSidebar,
+        currentUser,
+        setCurrentUser,
     }
 
     return (
