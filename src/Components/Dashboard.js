@@ -8,7 +8,8 @@ import { ProductContext } from '../contexts/productContext'
 
 function Dashboard() {
 
-    const {showSidebar} = useContext(ProductContext);
+  const {currentUserId, showSidebar } = useContext(ProductContext);
+  console.log("current user is id: " ,currentUserId);
   return (
     <div className="App">
               <Header />
