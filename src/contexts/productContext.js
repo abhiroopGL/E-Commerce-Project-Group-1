@@ -8,6 +8,9 @@ export const ProductProvider = (props) => {
 
     const [productList, setProductList] = useState([]);
     const [users, setUsers] = useState([]);
+    
+    const [showSidebar,setShowSidebar] = useState(false);
+
 
     useEffect(() => {
         const products = async () => {
@@ -39,6 +42,8 @@ export const ProductProvider = (props) => {
     const values = {
         productList,
         users,
+        showSidebar,
+        setShowSidebar,
     }
 
     return (
