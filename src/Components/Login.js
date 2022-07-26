@@ -1,38 +1,41 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useContext, useEffect } from "react";
 import { Button, Form, Card, Alert, Spinner, Image } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
+import { ProductContext } from "../contexts/productContext";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 const Login = () => {
+  const { users } = useContext(ProductContext);
+  const userEmailArr = users.map((user) => user.email);
+  const userPassArr = users.map((user) => user.password);
+  const navigate = useNavigate();
   const emailRef = useRef();
   const passwordRef = useRef();
-  // const confirmPassRef = useRef();
-  // const { login } = useAuth();
-  const [error, setError] = useState("");
+  const [error1, setError1] = useState("");
+  const [error2, setError2] = useState("");
   const [loading, setLoading] = useState(false);
   const [passwordType, setPasswordType] = useState("password");
-  // const navigate = useNavigate();
-  // async function handleSubmit(e) {
-  //     e.preventDefault();
-  //     // if (passwordRef.current.value !== confirmPassRef.current.value) {
-  //     //     return setError('Password do not match!');
-  //     // }
-
-  //     try {
-  //         setError('');
-  //         setLoading(true);
-  //         await login(emailRef.current.value, passwordRef.current.value);
-  //         navigate('/');
-  //     } catch {
-  //         setError('Failed to sign in.');
-  //     }
-  //     setLoading(false);
-  // }
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const currentEmail = emailRef.current.value;
+    const currentPass = passwordRef.current.value;
+    const checkUserEmailFromList = userEmailArr.includes(currentEmail);
+    console.log("output filter user", checkUserEmailFromList);
+    if (checkUserEmailFromList) {
+      setError1(false);
+      const checkUserPassFromList = userPassArr.includes(currentPass);
+      if (checkUserPassFromList) {
+        setError2(false);
+        navigate("/");
+      } else {
+        setError2(true);
+      }
+    } else {
+      setError1(true);
+    }
   };
   const [passEye, setPassEye] = useState(false);
-  
+
   const togglePassword = () => {
     if (passwordType === "password") {
       setPasswordType("text");
@@ -41,9 +44,8 @@ const Login = () => {
     }
     setPasswordType("password");
     setPassEye(true);
-
   };
-
+  console.log("users", users);
   return (
     <>
       {loading && (
@@ -65,7 +67,8 @@ const Login = () => {
       <Card className="m-auto" style={{ maxWidth: "400px" }}>
         <Card.Body>
           <h2 className="mb-4 text-center">Log In</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
+          {error1 && <Alert variant="danger">Invalid User Email</Alert>}
+          {error2 && <Alert variant="danger">Invalid User Passsword</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
@@ -78,8 +81,9 @@ const Login = () => {
                 <div className="input-group-btn">
                   <button
                     className="btn btn-outline-primary"
-                    onClick={togglePassword}>
-                    {passEye? <BsFillEyeFill /> : < BsFillEyeSlashFill />}
+                    onClick={togglePassword}
+                  >
+                    {passEye ? <BsFillEyeFill /> : <BsFillEyeSlashFill />}
                   </button>
                 </div>
               </div>
@@ -99,4 +103,4 @@ const Login = () => {
     </>
   );
 };
-export default Login;
+export default React.memo(Login);
