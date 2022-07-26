@@ -30,7 +30,7 @@ function Header() {
                 Something else here
               </NavDropdown.Item>
             </NavDropdown>
-           
+
           </Nav>
           <Form className="d-flex">
             <Form.Control

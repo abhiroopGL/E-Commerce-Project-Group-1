@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Button, Form, Card, Alert, Spinner, Image } from "react-bootstrap";
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
     const emailRef = useRef();
@@ -73,8 +73,8 @@ const Login = () => {
                                     ref={passwordRef}
                                     required />
                                 <div>
-                                    <button className="btn btn-outline-primary h-100" onClick={togglePassword}>
-                                        <i className="bi bi-eye"></i>
+                                    <button className="btn h-100" onClick={togglePassword}>
+                                        <i className="bi bi-eye-fill"></i>
                                     </button>
                                 </div>
                             </div>
