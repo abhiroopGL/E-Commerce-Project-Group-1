@@ -9,16 +9,19 @@ export const ProductProvider = (props) => {
     const [productList, setProductList] = useState([]);
 
     useEffect(() => {
-        const products = () => {
-            axios.get('https://fakestoreapi.com/products')
+        const products = async () => {
+            await axios.get('https://fakestoreapi.com/products')
                 .then((res) => {
                     setProductList(res.data);
                 })
                 .catch((err) => {
-                    console.log(err);
+                    console.log(err.message);
                 })
         }
+        
         products();
+
+
     }, [])
 
     return (
