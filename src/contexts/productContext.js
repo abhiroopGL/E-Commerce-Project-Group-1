@@ -46,7 +46,8 @@ export const ProductProvider = (props) => {
         showSidebar,
         setShowSidebar,
         currentUserId,
-        setCurrentUserId
+        setCurrentUserId,
+        setCurrentUser
     }
 
     return (
