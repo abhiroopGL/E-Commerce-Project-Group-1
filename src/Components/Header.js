@@ -30,6 +30,7 @@ function Header() {
   const deleteItem = (id) => {
     setCartProducts(cartProducts.filter(item => item.id !== id));
   }
+  const navigate = useNavigate();
   return (
     <Navbar bg="dark" variant="dark" expand="lg" id="header">
       <Container fluid>
