@@ -6,11 +6,8 @@ import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 
 const Login = () => {
   const { users, setCurrentUserId, setCurrentUser } = useContext(ProductContext);
-  let indexOfEmail = -1;
-  const userEmailArr = users.map((user) => {
-    indexOfEmail += 1 ;
-    return user.email});
-  const userIdArr = users.map((user, ind) =>ind);
+  const userEmailArr = users.map((user) => user.email);
+  const userIdArr = users.map((user) =>user.id);
   const userPassArr = users.map((user) => user.password);
   const navigate = useNavigate();
   const emailRef = useRef();
@@ -25,10 +22,10 @@ const Login = () => {
     const currentEmail = emailRef.current.value;
     const currentPass = passwordRef.current.value;
     const checkUserEmailFromList = userEmailArr.includes(currentEmail);
-    console.log("output filter user", checkUserEmailFromList + ' With id '+indexOfEmail);
+    console.log("output filter user", checkUserEmailFromList);
     if (checkUserEmailFromList) {
       setError1(false);
-      const checkUserPassFromList = currentPass === userPassArr[indexOfEmail-1]
+      const checkUserPassFromList = userPassArr.includes(currentPass);
       if (checkUserPassFromList) {
         setError2(false);
         setCurrentUser(currentEmail);   

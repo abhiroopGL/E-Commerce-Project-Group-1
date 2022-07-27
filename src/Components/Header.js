@@ -22,10 +22,10 @@ function Header() {
     <Navbar bg="dark" variant="dark" expand="lg" id="header">
       <Container fluid>
       <Nav.Link href="#">
-            <BsList size={30} onClick={sidebarHandler} className="mx-3" color="green" />
+            <BsList size={30} onClick={sidebarHandler} className="mx-3" color="white" />
           </Nav.Link>
         <Navbar.Brand href="/" >
-          MyExcelShop.in
+          MyShop.in
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">

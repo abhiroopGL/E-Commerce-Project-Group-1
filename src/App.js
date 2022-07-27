@@ -15,16 +15,16 @@ function App() {
       <ProductProvider>
         <Routes>
           <Route path='/' element={
-            <Dashboard/>
+            <Dashboard />
           } />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/forgot-password' element={<ForgotPassword />} />
           <Route path='/product-details/:id' element={<ProductDetails />} />
           <Route path='cart/:id' element={
-          <PrivateRoute>
-          <Cart.js/>
-          </PrivateRoute>} />
+            <PrivateRoute>
+              <Cart />
+            </PrivateRoute>} />
         </Routes>
       </ProductProvider>
     </Router>
