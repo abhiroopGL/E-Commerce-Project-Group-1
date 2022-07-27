@@ -31,8 +31,9 @@ const Login = () => {
       const checkUserPassFromList = currentPass === userPassArr[indexOfEmail-1]
       if (checkUserPassFromList) {
         setError2(false);
-        navigate("/");
+        setCurrentUser(currentEmail);   
         setCurrentUserId((userEmailArr.indexOf(currentEmail))+1);
+        navigate("/");
       } else {
         setError2(true);
       }

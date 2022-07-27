@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { createContext, useEffect, useState } from 'react';
 
-
 export const ProductContext = createContext();
     
 
@@ -13,6 +12,7 @@ export const ProductProvider = (props) => {
     const [userDetails, setUserDetails ] = useState({})
     const [currentUserId, setCurrentUserId] = useState(null);
     const [showSidebar,setShowSidebar] = useState(false);
+    const [cartProducts, setCartProducts] = useState([]);
 
 
     useEffect(() => { 
@@ -48,7 +48,11 @@ export const ProductProvider = (props) => {
         setShowSidebar,
         currentUserId,
         setCurrentUserId,
-        setUserDetails
+        setUserDetails,
+        cartProducts, 
+        setCartProducts,
+        setCurrentUser,
+        currentUser
     }
 
     return (

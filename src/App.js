@@ -7,6 +7,8 @@ import ForgotPassword from './Components/ForgotPassword';
 import ProductDetails from './Components/ProductDetails';
 import Dashboard from './Components/Dashboard';
 import UserDeliveryDetails from './Components/UserDeliveryDetails';
+import { Cart } from 'react-bootstrap-icons';
+import PrivateRoute from './Components/PrivateRoute';
 
 function App() {
   return (
@@ -21,6 +23,10 @@ function App() {
           <Route path='/forgot-password' element={<ForgotPassword />} />
           <Route path='/product-details/:id' element={<ProductDetails />} />
           <Route path='/user-delivery-details' element={<UserDeliveryDetails />} />
+          <Route path='cart/:id' element={
+          <PrivateRoute>
+          <Cart.js/>
+          </PrivateRoute>} />
         </Routes>
       </ProductProvider>
     </Router>

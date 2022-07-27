@@ -5,18 +5,19 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { BsList } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
-import NavDropdown from "react-bootstrap/NavDropdown";
+//import NavDropdown from "react-bootstrap/NavDropdown";
 import { CartPlus } from "react-bootstrap-icons";
 import { ProductContext } from "../contexts/productContext";
-import * as Icon from 'react-bootstrap-icons';
+//import * as Icon from 'react-bootstrap-icons';
 function Header() {
-  const { setShowSidebar } = useContext(ProductContext);
+  const { setShowSidebar, currentUser, currentUserId } = useContext(ProductContext);
 
   const sidebarHandler = () => {
     setShowSidebar(true);
   };
-
+  console.warn(currentUser+'  '+currentUserId)
   return (
     <Navbar bg="dark" variant="dark" expand="lg" id="header">
       <Container fluid>
@@ -44,9 +45,18 @@ function Header() {
             />
             <Button variant="outline-success">Search</Button>
           </Form>
-          <Nav.Link href="#">
-            <CartPlus size={30} width="15vh" className="m-10" color="green" />
+          {
+          currentUser!==null ? (
+          <Nav.Link>
+          <Link to = {`/cart/${currentUserId}`} >
+            <CartPlus size={30} width="15vh" className="m-10 fa-solid fa-cart-shopping text-light" color="white" />
+            </Link>
           </Nav.Link>
+          ):(
+          <Link to = {`/login`} style={{width:'15vh', textDecoration:'none', color:'white'}}>
+            Login
+            </Link>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>
