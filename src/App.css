@@ -40,3 +40,14 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+#thanksLayout{
+  text-align: center;
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  height: 100vh;
+  background-color: rgb(228, 153, 125);
+  justify-content: center;
+  align-items: center;
+}

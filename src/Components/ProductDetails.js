@@ -80,12 +80,14 @@ function ProductDetails() {
             </Container> */}
             <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
             <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-            <div style={{display: "flex", justifyContent: "space-around"}}>
-                <div >
-                    <img src={item.image} />
+            <div style={{ display: "flex", justifyContent: "space-around" }} className='mx-5 mt-5'>
+                <div>
+                    <img
+                        style={{ maxWidth: '400px', maxHeight: '400px' }}
+                        src={item.image} />
                 </div>
-                <div > 
-                    <Table bordered={false}>
+                <div style={{ maxWidth: '700px' }}>
+                    <Table>
 
                         <tbody>
 
@@ -104,14 +106,17 @@ function ProductDetails() {
                             <tr>
                                 <td><strong>Description</strong></td>
                                 <td>{item.description}</td>
-
-
                             </tr>
 
 
                         </tbody>
                     </Table>
-                    <CounterInput value={1} min={1} max={50} onChange={(value) => { setCounter(value); console.log(value) }}  />
+                    <div>
+                    <p><strong>Rating :</strong> <span style={{ background: "green", color: "#fff", padding: "2px 5px", borderRadius: "5px" }}>{item.rating.rate} ★	</span></p>
+                    <div className='w-25'>
+                        <CounterInput value={1} min={1} max={50} onChange={(value) => { setCounter(value); console.log(value) }} />
+                    </div>
+                    </div>
                 </div>
             </div>
         </>

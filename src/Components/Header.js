@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
@@ -32,11 +33,11 @@ function Header() {
   return (
     <Navbar bg="dark" variant="dark" expand="lg" id="header">
       <Container fluid>
-        <Nav.Link href="#">
-          <BsList size={30} onClick={sidebarHandler} className="mx-3" color="green" />
-        </Nav.Link>
+      <Nav.Link href="#">
+            <BsList size={30} onClick={sidebarHandler} className="mx-3" color="white" />
+          </Nav.Link>
         <Navbar.Brand href="/" >
-          MyExcelShop.in
+          MyShop.in
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -59,8 +60,8 @@ function Header() {
           {
             currentUser !== null ? (
               <Nav.Link>
-                <Button onClick={handleShow}>
-                  <CartPlus size={30} width="15vh" className="m-10 fa-solid fa-cart-shopping text-light" color="white" />
+                <Button onClick={handleShow} className="mx-3">
+                  <CartPlus size={30} width="12vh" className="m-10 fa-solid fa-cart-shopping text-light" color="white" />
                 </Button>
               </Nav.Link>
             ) : (
@@ -99,7 +100,7 @@ function Header() {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Link to  = "/user-delivery-details"> Check Out</Link>
+          <Button variant="primary" onClick={()=>navigate("/user-delivery-details")}>Check Out</Button> 
         </Modal.Footer>
       </Modal>
     </Navbar>
