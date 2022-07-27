@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
@@ -14,6 +15,7 @@ import { CartPlus } from "react-bootstrap-icons";
 import { ProductContext } from "../contexts/productContext";
 //import * as Icon from 'react-bootstrap-icons';
 function Header() {
+  const navigate = useNavigate();
   const { setShowSidebar, currentUser, currentUserId, cartProducts } = useContext(ProductContext);
   console.log("cartProducts", cartProducts);
   const sidebarHandler = () => {
@@ -56,8 +58,8 @@ function Header() {
           {
             currentUser !== null ? (
               <Nav.Link>
-                <Button onClick={handleShow}>
-                  <CartPlus size={30} width="15vh" className="m-10 fa-solid fa-cart-shopping text-light" color="white" />
+                <Button onClick={handleShow} className="mx-3">
+                  <CartPlus size={30} width="12vh" className="m-10 fa-solid fa-cart-shopping text-light" color="white" />
                 </Button>
               </Nav.Link>
             ) : (
@@ -95,7 +97,7 @@ function Header() {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Link to  = "/user-delivery-details"> Check Out</Link>
+          <Button variant="primary" onClick={()=>navigate("/user-delivery-details")}>Check Out</Button> 
         </Modal.Footer>
       </Modal>
     </Navbar>
