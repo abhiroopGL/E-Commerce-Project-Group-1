@@ -3,7 +3,7 @@ import React from 'react';
 function Footer() {
   return (
     <footer id='footer'>
-        <p>Copyright © 2022 | MyExcelShop.in | All Right Reserved.</p>
+        <p>Copyright © 2022 | MyShop.in | All Right Reserved.</p>
     </footer>
   );
 }

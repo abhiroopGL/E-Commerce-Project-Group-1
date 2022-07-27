@@ -40,7 +40,8 @@ const Login = () => {
   };
   const [passEye, setPassEye] = useState(false);
 
-  const togglePassword = () => {
+  const togglePassword = (e) => {
+    e.preventDefault();
     if (passwordType === "password") {
       setPasswordType("text");
       setPassEye(false);
@@ -83,7 +84,7 @@ const Login = () => {
                 <Form.Control type={passwordType} ref={passwordRef} required />
                 <div className="input-group-btn">
                   <button
-                    className="btn btn-outline-primary"
+                    className="btn btn-primary"
                     onClick={togglePassword}
                   >
                     {passEye ? <BsFillEyeFill /> : <BsFillEyeSlashFill />}
