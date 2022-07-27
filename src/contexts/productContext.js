@@ -52,7 +52,8 @@ export const ProductProvider = (props) => {
         cartProducts, 
         setCartProducts,
         setCurrentUser,
-        currentUser
+        currentUser,
+        userDetails,
     }
 
     return (

@@ -10,6 +10,7 @@ import UserDeliveryDetails from "./Components/UserDeliveryDetails";
 import { Cart } from "react-bootstrap-icons";
 import PrivateRoute from "./Components/PrivateRoute";
 import ThanksForShopping from "./Components/ThanksForShopping";
+import Invoice from "./Components/Invoice";
 function App() {
   return (
     <Router>
@@ -22,6 +23,7 @@ function App() {
           <Route path="/product-details/:id" element={<ProductDetails />} />
           <Route path="/user-delivery-details" element={<UserDeliveryDetails />} />
           <Route path="cart/:id" element={<PrivateRoute> <Cart /></PrivateRoute> }/>
+          <Route path="/invoice" element={<Invoice />} />
           <Route path="/thanks-for-shopping" element={<ThanksForShopping />} />
 
         </Routes>
