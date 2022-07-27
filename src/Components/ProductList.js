@@ -1,20 +1,20 @@
 import React, { useContext } from 'react'
-import { Card, Button } from 'react-bootstrap'
+import { Card, Button, Alert } from 'react-bootstrap'
 import { ProductContext } from '../contexts/productContext';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 function ProductList() {
 
-    const {productList, currentUserId, cartProducts, setCartProducts} = useContext(ProductContext)
-    const  addToCart = (item) => {
+    const { productList, currentUserId, cartProducts, setCartProducts } = useContext(ProductContext)
+    const addToCart = (item) => {
         setCartProducts(prevCartProducts => {
             return [
-              ...prevCartProducts, 
-              item
+                ...prevCartProducts,
+                item
             ]
-          })
-       
+        })
+
     }
-   
+
     const viewCartProducts = () => {
         console.log("cart products", cartProducts)
     }
