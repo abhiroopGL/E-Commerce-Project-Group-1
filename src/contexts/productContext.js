@@ -10,6 +10,7 @@ export const ProductProvider = (props) => {
     const [productList, setProductList] = useState([]);
     const [users, setUsers] = useState([]);
     const [currentUser, setCurrentUser ] = useState(null)
+    const [userDetails, setUserDetails ] = useState({})
     const [currentUserId, setCurrentUserId] = useState(null);
     const [showSidebar,setShowSidebar] = useState(false);
 
@@ -46,7 +47,8 @@ export const ProductProvider = (props) => {
         showSidebar,
         setShowSidebar,
         currentUserId,
-        setCurrentUserId
+        setCurrentUserId,
+        setUserDetails
     }
 
     return (
