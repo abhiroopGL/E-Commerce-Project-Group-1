@@ -8,13 +8,14 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { BsList } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import {BsFillTrashFill} from "react-icons/bs"
 
 //import NavDropdown from "react-bootstrap/NavDropdown";
 import { CartPlus } from "react-bootstrap-icons";
 import { ProductContext } from "../contexts/productContext";
 //import * as Icon from 'react-bootstrap-icons';
 function Header() {
-  const { setShowSidebar, currentUser, currentUserId, cartProducts } = useContext(ProductContext);
+  const { setShowSidebar, currentUser, currentUserId, cartProducts, setCartProducts } = useContext(ProductContext);
   console.log("cartProducts", cartProducts);
   const sidebarHandler = () => {
     setShowSidebar(true);
@@ -25,7 +26,9 @@ function Header() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  const deleteItem = (id) => {
+    setCartProducts(cartProducts.filter(item => item.id !== id));
+  }
   return (
     <Navbar bg="dark" variant="dark" expand="lg" id="header">
       <Container fluid>
@@ -70,7 +73,7 @@ function Header() {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Cart Items</Modal.Title>
         </Modal.Header>
         <Modal.Body>
         <div id="Card-container">
@@ -83,7 +86,8 @@ function Header() {
                         <Card.Body >
                             <Card.Title>{(item.title).slice(0, 18).concat("...")}</Card.Title>
                             <p>₹ {item.price}</p>
-                          
+                            <Button onClick = {() => deleteItem(item.id)}><BsFillTrashFill/>Delete from cart</Button>
+                                                      
                         </Card.Body>
                     </Card>
                 ))
