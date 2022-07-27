@@ -25,7 +25,7 @@ function App() {
           <Route path='/user-delivery-details' element={<UserDeliveryDetails />} />
           <Route path='cart/:id' element={
           <PrivateRoute>
-          <Cart.js/>
+          <Cart/>
           </PrivateRoute>} />
         </Routes>
       </ProductProvider>
