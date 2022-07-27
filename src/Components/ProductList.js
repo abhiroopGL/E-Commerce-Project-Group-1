@@ -14,7 +14,7 @@ function ProductList() {
           })
        
     }
-    //console.log(cartProducts, "value");
+   
     const viewCartProducts = () => {
         console.log("cart products", cartProducts)
     }
@@ -30,7 +30,7 @@ function ProductList() {
                             <Card.Title>{(item.title).slice(0, 18).concat("...")}</Card.Title>
                             <p>₹ {item.price}</p>
                             <Button variant="primary" onClick = {() => {addToCart(item); }}>Add to Cart</Button>
-                            <Button onClick={viewCartProducts}>view cart</Button>
+                            
                         </Card.Body>
                     </Card>
                 ))
