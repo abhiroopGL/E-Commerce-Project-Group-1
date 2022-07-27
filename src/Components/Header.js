@@ -16,6 +16,7 @@ import { CartPlus } from "react-bootstrap-icons";
 import { ProductContext } from "../contexts/productContext";
 //import * as Icon from 'react-bootstrap-icons';
 function Header() {
+  const navigate = useNavigate();
   const { setShowSidebar, currentUser, currentUserId, cartProducts, setCartProducts } = useContext(ProductContext);
   console.log("cartProducts", cartProducts);
   const sidebarHandler = () => {
