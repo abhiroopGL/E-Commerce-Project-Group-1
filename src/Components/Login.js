@@ -5,8 +5,11 @@ import { ProductContext } from "../contexts/productContext";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 
 const Login = () => {
-  const { users, currentUserId, setCurrentUserId } = useContext(ProductContext);
-  const userEmailArr = users.map((user) => user.email);
+  const { users, setCurrentUserId, setCurrentUser } = useContext(ProductContext);
+  let indexOfEmail = -1;
+  const userEmailArr = users.map((user) => {
+    indexOfEmail += 1 ;
+    return user.email});
   const userIdArr = users.map((user, ind) =>ind);
   const userPassArr = users.map((user) => user.password);
   const navigate = useNavigate();
@@ -22,14 +25,15 @@ const Login = () => {
     const currentEmail = emailRef.current.value;
     const currentPass = passwordRef.current.value;
     const checkUserEmailFromList = userEmailArr.includes(currentEmail);
-    console.log("output filter user", checkUserEmailFromList);
+    console.log("output filter user", checkUserEmailFromList + ' With id '+indexOfEmail);
     if (checkUserEmailFromList) {
       setError1(false);
-      const checkUserPassFromList = userPassArr.includes(currentPass);
+      const checkUserPassFromList = currentPass === userPassArr[indexOfEmail-1]
       if (checkUserPassFromList) {
         setError2(false);
-        navigate("/");
+        setCurrentUser(currentEmail);   
         setCurrentUserId((userEmailArr.indexOf(currentEmail))+1);
+        navigate("/");
       } else {
         setError2(true);
       }

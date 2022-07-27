@@ -1,19 +1,20 @@
 import axios from 'axios';
 import React, { createContext, useEffect, useState } from 'react';
 
-
 export const ProductContext = createContext();
+    
 
 export const ProductProvider = (props) => {
 
     const [productList, setProductList] = useState([]);
     const [users, setUsers] = useState([]);
+    const [currentUser, setCurrentUser ] = useState(null)
     const [currentUserId, setCurrentUserId] = useState(null);
     const [showSidebar,setShowSidebar] = useState(false);
     const [cartProducts, setCartProducts] = useState([]);
 
 
-    useEffect(() => {
+    useEffect(() => { 
         const products = async () => {
             
             await axios.get('https://fakestoreapi.com/products')
@@ -48,6 +49,8 @@ export const ProductProvider = (props) => {
         setCurrentUserId,
         cartProducts, 
         setCartProducts,
+        setCurrentUser,
+        currentUser
     }
 
     return (

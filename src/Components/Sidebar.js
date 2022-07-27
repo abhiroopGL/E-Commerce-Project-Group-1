@@ -8,7 +8,7 @@ import '../App.css'
 function Sidebar() {
     const closeSidebar = () => setShowSidebar(false);
 
-    const { showSidebar, setShowSidebar } = useContext(ProductContext);
+    const { showSidebar, setShowSidebar, currentUser } = useContext(ProductContext);
     return (
         <>
             <Container className='p-4 bg-dark' >
@@ -22,8 +22,9 @@ function Sidebar() {
                             <li><Link to = "/" className = "link">About</Link></li>
                             <li><Link to = "/" className = "link">Contact Us</Link></li>
                             <li><Link to = "/login" className = "link">Log Out</Link></li>
-
+                            <li>{currentUser}</li>
                         </ul>
+                        
                     </Offcanvas.Body>
                 </Offcanvas>
             </Container>
