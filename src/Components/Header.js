@@ -46,7 +46,7 @@ function Header() {
             <Button variant="outline-success">Search</Button>
           </Form>
           {
-          currentUser===null ? (
+          currentUser!==null ? (
           <Nav.Link>
           <Link to = {`/cart/${currentUserId}`} >
             <CartPlus size={30} width="15vh" className="m-10 fa-solid fa-cart-shopping text-light" color="white" />

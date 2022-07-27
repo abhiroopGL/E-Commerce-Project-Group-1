@@ -9,7 +9,7 @@ const Cart = () => {
 
     useEffect(() => {
         const fetchItem = async () => {
-            fetch(`https://fakestoreapi.com/carts/${id}`)
+            fetch(`https://fakestoreapi.com/carts`)
             .then(res=>res.json())
             .then(json=>console.log(json))
             setItem(data);

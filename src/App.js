@@ -7,6 +7,7 @@ import ForgotPassword from './Components/ForgotPassword';
 import ProductDetails from './Components/ProductDetails';
 import Dashboard from './Components/Dashboard';
 import { Cart } from 'react-bootstrap-icons';
+import PrivateRoute from './Components/PrivateRoute';
 
 function App() {
   return (
@@ -20,7 +21,10 @@ function App() {
           <Route path='/signup' element={<SignUp />} />
           <Route path='/forgot-password' element={<ForgotPassword />} />
           <Route path='/product-details/:id' element={<ProductDetails />} />
-          <Route path='cart/:id' element={<Cart.js/>} />
+          <Route path='cart/:id' element={
+          <PrivateRoute>
+          <Cart.js/>
+          </PrivateRoute>} />
         </Routes>
       </ProductProvider>
     </Router>
