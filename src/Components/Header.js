@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
+import Modal from 'react-bootstrap/Modal';
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -12,20 +14,26 @@ import { CartPlus } from "react-bootstrap-icons";
 import { ProductContext } from "../contexts/productContext";
 //import * as Icon from 'react-bootstrap-icons';
 function Header() {
-  const { setShowSidebar, currentUser, currentUserId } = useContext(ProductContext);
-
+  const { setShowSidebar, currentUser, currentUserId, cartProducts } = useContext(ProductContext);
+  console.log("cartProducts", cartProducts);
   const sidebarHandler = () => {
     setShowSidebar(true);
   };
-  console.warn(currentUser+'  '+currentUserId)
+  console.warn(currentUser + '  ' + currentUserId)
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <Navbar bg="dark" variant="dark" expand="lg" id="header">
       <Container fluid>
       <Nav.Link href="#">
-            <BsList size={30} onClick={sidebarHandler} className="mx-3" color="green" />
+            <BsList size={30} onClick={sidebarHandler} className="mx-3" color="white" />
           </Nav.Link>
         <Navbar.Brand href="/" >
-          MyExcelShop.in
+          MyShop.in
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -34,7 +42,7 @@ function Header() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-          
+
           </Nav>
           <Form className="d-flex">
             <Form.Control
@@ -46,19 +54,50 @@ function Header() {
             <Button variant="outline-success">Search</Button>
           </Form>
           {
-          currentUser!==null ? (
-          <Nav.Link>
-          <Link to = {`/cart/${currentUserId}`} >
-            <CartPlus size={30} width="15vh" className="m-10 fa-solid fa-cart-shopping text-light" color="white" />
-            </Link>
-          </Nav.Link>
-          ):(
-          <Link to = {`/login`} style={{width:'15vh', textDecoration:'none', color:'white'}}>
-            Login
-            </Link>
-          )}
+            currentUser !== null ? (
+              <Nav.Link>
+                <Button onClick={handleShow}>
+                  <CartPlus size={30} width="15vh" className="m-10 fa-solid fa-cart-shopping text-light" color="white" />
+                </Button>
+              </Nav.Link>
+            ) : (
+              <Link to={`/login`} style={{ width: '15vh', textDecoration: 'none', color: 'white' }}>
+                Login
+              </Link>
+            )}
         </Navbar.Collapse>
       </Container>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <div id="Card-container">
+            {
+                cartProducts.map((item, index) => (
+                    <Card key={index} className="mx-2 mt-4" style={{ border: 'none', width: '40vh', diplay: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: '3vh' }}>
+                        <Link to={`/product-details/${item.id}`} >
+                            <Card.Img variant="top" src={item.image} style={{ height: '35vh', width: '28vh' }} />
+                        </Link>
+                        <Card.Body >
+                            <Card.Title>{(item.title).slice(0, 18).concat("...")}</Card.Title>
+                            <p>₹ {item.price}</p>
+                          
+                        </Card.Body>
+                    </Card>
+                ))
+            }
+        </div>
+
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Link to  = "/user-delivery-details"> Check Out</Link>
+        </Modal.Footer>
+      </Modal>
     </Navbar>
   );
 }

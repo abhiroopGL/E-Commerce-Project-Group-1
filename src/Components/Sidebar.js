@@ -14,7 +14,7 @@ function Sidebar() {
             <Container className='p-4 bg-dark' >
                 <Offcanvas show={showSidebar} onHide={closeSidebar} className = "bg-dark text-white">
                     <Offcanvas.Header closeButton >
-                        <Offcanvas.Title style={{fontSize: "30px"}} >MyExcelShop</Offcanvas.Title>
+                        <Offcanvas.Title style={{fontSize: "30px"}} >{currentUser}</Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
                         <ul style={{listStyle: "none", fontSize: "30px"}}  >
@@ -22,9 +22,7 @@ function Sidebar() {
                             <li><Link to = "/" className = "link">About</Link></li>
                             <li><Link to = "/" className = "link">Contact Us</Link></li>
                             <li><Link to = "/login" className = "link">Log Out</Link></li>
-                            <li>{currentUser}</li>
                         </ul>
-                        
                     </Offcanvas.Body>
                 </Offcanvas>
             </Container>
