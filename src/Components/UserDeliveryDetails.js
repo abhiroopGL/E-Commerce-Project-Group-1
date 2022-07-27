@@ -37,7 +37,7 @@ const {setUserDetails} = useContext(ProductContext);
       var pattern = new RegExp(/^[0-9\b{10}]+$/);
       if (!pattern.test(e.target.value)) {
         setError(true);
-      } else if (e.target.value.length != 10) {
+      } else if (e.target.value.length !== 10) {
         setError(true);
       } else {
         setError(false);

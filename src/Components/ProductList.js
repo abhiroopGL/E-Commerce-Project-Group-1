@@ -4,7 +4,7 @@ import { ProductContext } from '../contexts/productContext';
 import {Link} from "react-router-dom";
 function ProductList() {
 
-    const {productList, currentUserId, cartProducts, setCartProducts} = useContext(ProductContext)
+    const {productList, cartProducts, setCartProducts} = useContext(ProductContext)
     const  addToCart = (item) => {
         setCartProducts(prevCartProducts => {
             return [
@@ -22,11 +22,11 @@ function ProductList() {
         <div id="Card-container">
             {
                 productList.map((item, index) => (
-                    <Card key={index} className="mx-2 mt-4" style={{ width: '40vh', diplay: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: '3vh' }}>
+                    <Card key={index} className="mx-2 mt-4 pt-2 productCard">
                         <Link to={`/product-details/${item.id}`} >
                             <Card.Img variant="top" src={item.image} style={{ height: '35vh', width: '28vh' }} />
                         </Link>
-                        <Card.Body style={{ diplay: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                        <Card.Body className='cardBody'>
                             <Card.Title>{(item.title).slice(0, 18).concat("...")}</Card.Title>
                             <p>₹ {item.price}</p>
                             <Button variant="primary" onClick = {() => {addToCart(item); }}>Add to Cart</Button>
