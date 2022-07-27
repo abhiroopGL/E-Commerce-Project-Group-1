@@ -9,15 +9,12 @@ export const ProductProvider = (props) => {
 
     const [productList, setProductList] = useState([]);
     const [users, setUsers] = useState([]);
-<<<<<<< HEAD
     const [currentUser, setCurrentUser ] = useState(null)
-=======
     const [currentUserId, setCurrentUserId] = useState(null);
->>>>>>> c4f2c161d177a3b63d50cd56633a97de4b3a1595
     const [showSidebar,setShowSidebar] = useState(false);
 
 
-    useEffect(() => {
+    useEffect(() => { 
         const products = async () => {
             
             await axios.get('https://fakestoreapi.com/products')
@@ -48,13 +45,8 @@ export const ProductProvider = (props) => {
         users,
         showSidebar,
         setShowSidebar,
-<<<<<<< HEAD
-        currentUser,
-        setCurrentUser,
-=======
         currentUserId,
         setCurrentUserId
->>>>>>> c4f2c161d177a3b63d50cd56633a97de4b3a1595
     }
 
     return (
