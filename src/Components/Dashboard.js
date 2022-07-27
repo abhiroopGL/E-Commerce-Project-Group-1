@@ -8,7 +8,7 @@ import { ProductContext } from '../contexts/productContext'
 
 function Dashboard() {
 
-    const {showSidebar} = useContext(ProductContext);
+  const {currentUserId, showSidebar } = useContext(ProductContext);
   return (
     <div className="App">
               <Header />
@@ -22,4 +22,4 @@ function Dashboard() {
   )
 }
 
-export default Dashboard
+export default React.memo(Dashboard);

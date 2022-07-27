@@ -3,9 +3,11 @@ import { Button, Form, Card, Alert, Spinner, Image } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { ProductContext } from "../contexts/productContext";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
+
 const Login = () => {
-  const { users, setCurrentUser } = useContext(ProductContext);
+  const { users, currentUserId, setCurrentUserId, currentUser } = useContext(ProductContext);
   const userEmailArr = users.map((user) => user.email);
+  const userIdArr = users.map((user, ind) =>ind);
   const userPassArr = users.map((user) => user.password);
   const navigate = useNavigate();
   const emailRef = useRef();
@@ -28,6 +30,7 @@ const Login = () => {
         setError2(false);
         setCurrentUser(currentEmail);
         navigate("/");
+        setCurrentUserId((userEmailArr.indexOf(currentEmail))+1);
       } else {
         setError2(true);
       }
@@ -46,7 +49,6 @@ const Login = () => {
     setPasswordType("password");
     setPassEye(true);
   };
-  console.log("users", users);
   return (
     <>
       {loading && (

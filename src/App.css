@@ -7,7 +7,7 @@
   justify-content: space-around;
 }
 #header {
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 #footer {
   margin-top: 40px;
@@ -16,9 +16,13 @@
   padding: 20px 0px;
   height: 65px;
   color: white;
-  background-color: midnightblue;
+  background-color: #212519;
 }
 
 #carouselImg {
   height: 500px;
+}
+.link{
+  text-decoration: none;
+  color: whitesmoke;
 }
