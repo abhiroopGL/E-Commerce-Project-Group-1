@@ -13,7 +13,14 @@ function Sidebar() {
         <Container style={{ width: "200px" }} className='bg-dark' >
             <Offcanvas show={showSidebar} onHide={closeSidebar} className="bg-dark text-white">
                 <Offcanvas.Header closeButton >
-                    <Offcanvas.Title style={{ fontSize: "25px" }}>Hello, {username}</Offcanvas.Title>
+
+                    <Offcanvas.Title style={{ fontSize: "25px" }}>
+                        {
+                            currentUser && <>
+                                Hello, {username}</>
+                        }
+                    </Offcanvas.Title>
+
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <ul style={{ listStyle: "none", fontSize: "20px" }}  >
