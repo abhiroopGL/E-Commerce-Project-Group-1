@@ -15,6 +15,8 @@ export const ProductProvider = (props) => {
     const [cartProducts, setCartProducts] = useState([]);
     const [checkOut, setCheckOut] = useState(false);
     const [username, setUsername] = useState(null);
+    const filledArray = Array(20).fill(1);
+    const [counter, setCounter] = useState(filledArray);
 
 
     useEffect(() => { 
@@ -60,6 +62,8 @@ export const ProductProvider = (props) => {
         setCheckOut,
         username,
         setUsername,
+        counter, 
+        setCounter
     }
 
     return (
