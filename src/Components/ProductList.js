@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Card, Button, Alert } from 'react-bootstrap'
+import { Card, Button } from 'react-bootstrap'
 import { ProductContext } from '../contexts/productContext';
 import { Link } from "react-router-dom";
 function ProductList() {
