@@ -1,9 +1,8 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Card, Container, Modal, Form, Nav, Navbar, Badge } from "react-bootstrap";
-import { BsList } from "react-icons/bs";
+import { BsList, BsFillTrashFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { BsFillTrashFill } from "react-icons/bs"
 import { Cart } from "react-bootstrap-icons";
 import { ProductContext } from "../contexts/productContext";
 
@@ -22,9 +21,6 @@ function Header() {
   const deleteItem = (id) => {
     setCartProducts(cartProducts.filter(item => item.id !== id));
   }
-
-  console.warn(currentUser + '  ' + currentUserId)
-  console.log("cartProducts", cartProducts);
 
   setCheckOut(cartProducts.length > 0 ? true : false)
 

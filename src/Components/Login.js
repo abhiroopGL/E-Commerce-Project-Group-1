@@ -30,7 +30,6 @@ const Login = () => {
         return checkUserEmailFromList = true;
       }
     })
-    console.log("output filter user", checkUserEmailFromList + ' index is ' + indexOfEmail);
     if (checkUserEmailFromList) {
       setError1(false);
       const checkUserPassFromList = userPassArr[indexOfEmail] === currentPass;

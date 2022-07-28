@@ -2,15 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
 import CounterInput from 'react-bootstrap-counter';
 import Table from 'react-bootstrap/Table';
-// import Button from 'react-bootstrap/Button';
-// import Card from 'react-bootstrap/Card';
-// import Container from 'react-bootstrap/Container';
-// import Dropdown from 'react-bootstrap/Dropdown';
-// import Header from './Header';
-
 
 import '../App.css'
-import { Strava } from 'react-bootstrap-icons';
 
 function ProductDetails() {
     const { id } = useParams();
