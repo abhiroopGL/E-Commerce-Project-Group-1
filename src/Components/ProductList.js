@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react'
-import { Card, Button, Dropdown } from 'react-bootstrap'
+import React, { useContext } from 'react'
+import { Card, Button } from 'react-bootstrap'
 import { ProductContext } from '../contexts/productContext';
 import { Link } from "react-router-dom";
 function ProductList() {
@@ -13,8 +13,6 @@ function ProductList() {
                 ...prevCartProducts, item
             ]
         })
-        console.log(counter, "counter")
-
     }
 
 
@@ -45,7 +43,6 @@ function ProductList() {
                     ))
                 }
             </div>
-            {console.log(cartProducts)}
         </>
     )
 }

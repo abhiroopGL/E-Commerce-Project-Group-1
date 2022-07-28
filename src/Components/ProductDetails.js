@@ -3,9 +3,7 @@ import { useParams } from "react-router-dom"
 import CounterInput from 'react-bootstrap-counter';
 import Table from 'react-bootstrap/Table';
 
-
 import '../App.css'
-import { Strava } from 'react-bootstrap-icons';
 
 function ProductDetails() {
     const { id } = useParams();
@@ -61,10 +59,17 @@ function ProductDetails() {
                         </tbody>
                     </Table>
                     <div>
+<<<<<<< HEAD
                         <p><strong>Rating :</strong> <span style={{ background: "green", color: "#fff", padding: "2px 5px", borderRadius: "5px" }}>{item.rating.rate} ★	</span></p>
                         <div className='w-25'>
                             <CounterInput value={1} min={1} max={50} onChange={(value) => { setCounter(value); console.log(value) }} />
                         </div>
+=======
+                    <p><strong>Rating :</strong> <span style={{ background: "green", color: "#fff", padding: "2px 5px", borderRadius: "5px" }}>{item.rating.rate} ★	</span></p>
+                    <div className='w-25'>
+                    <strong> Quantity:</strong> <CounterInput value={1} min={1} max={50} onChange={(value) => {setCounter(value)}} />
+                    </div>
+>>>>>>> 7d885aa735a7079e5c79623c7fd228ff5028b66d
                     </div>
                 </div>
             </div>

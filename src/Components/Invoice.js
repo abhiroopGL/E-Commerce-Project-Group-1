@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
-import { Button } from "react-bootstrap";
-import Table from "react-bootstrap/Table";
+import { Button, Table } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { ProductContext } from "../contexts/productContext";
 
