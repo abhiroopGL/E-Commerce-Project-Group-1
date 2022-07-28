@@ -4,7 +4,7 @@ import { ProductContext } from '../contexts/productContext';
 import { Link } from "react-router-dom";
 function ProductList() {
 
-    const { productList, currentUserId, cartProducts, setCartProducts } = useContext(ProductContext)
+    const { productList, currentUserId, cartProducts, setCartProducts, setCheckOut } = useContext(ProductContext)
     const addToCart = (item) => {
         setCartProducts(prevCartProducts => {
             return [
@@ -12,12 +12,12 @@ function ProductList() {
                 item
             ]
         })
-
     }
 
     const viewCartProducts = () => {
         console.log("cart products", cartProducts)
     }
+    setCheckOut(cartProducts.length>0?true:false);
     return (
         <div id="Card-container">
             {

@@ -13,6 +13,7 @@ export const ProductProvider = (props) => {
     const [currentUserId, setCurrentUserId] = useState(null);
     const [showSidebar,setShowSidebar] = useState(false);
     const [cartProducts, setCartProducts] = useState([]);
+    const [checkOut, setCheckOut] = useState(false);
 
 
     useEffect(() => { 
@@ -54,6 +55,8 @@ export const ProductProvider = (props) => {
         setCurrentUser,
         currentUser,
         userDetails,
+        checkOut,
+        setCheckOut,
     }
 
     return (
