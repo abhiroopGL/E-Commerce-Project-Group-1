@@ -1,4 +1,4 @@
-import React, { useRef, useState, useContext, useEffect } from "react";
+import React, { useRef, useState, useContext } from "react";
 import { Button, Form, Card, Alert, Spinner, Image } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { ProductContext } from "../contexts/productContext";
