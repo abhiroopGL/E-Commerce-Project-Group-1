@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react'
 import { Card, Button, Dropdown } from 'react-bootstrap'
 import { ProductContext } from '../contexts/productContext';
 import { Link } from "react-router-dom";
-import CounterInput from 'react-bootstrap-counter';
 function ProductList() {
 
 
@@ -11,11 +10,7 @@ function ProductList() {
 
         setCartProducts(prevCartProducts => {
             return [
-                ...prevCartProducts,
-                {
-                    ...item,
-                    quantity: counter[item.id]
-                }
+                ...prevCartProducts,item
             ]
         })
         console.log(counter, "counter")
@@ -23,24 +18,13 @@ function ProductList() {
     }
 
 
-
-
-
-    const itemCounter = (index, val) => {
-
-        setCounter(existingItems => {
-            return existingItems.map((item, j) => {
-                return j === index ? val : item
-            })
-        })
-    }
+    setCheckOut(cartProducts.length > 0 ? true : false);
 
     return (
         <>
 
             <div id="Card-container">
                 {
-
 
                     productList.map((item, index) => (
 
