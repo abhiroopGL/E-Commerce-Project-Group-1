@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import Header from './Header'
 import Display from './Display'
 import ProductList from './ProductList'
@@ -8,17 +8,18 @@ import { ProductContext } from '../contexts/productContext'
 
 function Dashboard() {
 
-  const {currentUserId, showSidebar } = useContext(ProductContext);
+  const { showSidebar } = useContext(ProductContext);
+  
   return (
     <div className="App">
-              <Header />
-              {
-                showSidebar && <Sidebar/>
-              }
-              <Display />
-              <ProductList />
-              <Footer />
-            </div>
+      <Header />
+      {
+        showSidebar && <Sidebar />
+      }
+      <Display />
+      <ProductList />
+      <Footer />
+    </div>
   )
 }
 

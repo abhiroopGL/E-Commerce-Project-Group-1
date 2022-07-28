@@ -1,16 +1,15 @@
-import React, { useContext, useState, useRef } from 'react'
-import { Card, Button, Alert, Dropdown } from 'react-bootstrap'
+import React, { useContext } from 'react'
+import { Card, Button, Dropdown } from 'react-bootstrap'
 import { ProductContext } from '../contexts/productContext';
 import { Link } from "react-router-dom";
 import CounterInput from 'react-bootstrap-counter';
 function ProductList() {
-    const quantityRef = useRef();
+ 
 
-    const { productList, currentUserId, cartProducts, setCartProducts } = useContext(ProductContext)
-    const filledArray = Array(20).fill(1);
-    const [counter, setCounter] = useState(filledArray);
+    const { productList, cartProducts, setCartProducts, setCheckOut, counter, setCounter } = useContext(ProductContext)
+  
     const addToCart = (item) => {
-        console.log(counter, "counter")
+        
         setCartProducts(prevCartProducts => {
             return [
                 ...prevCartProducts,
@@ -20,6 +19,7 @@ function ProductList() {
                 }
             ]
         })
+        console.log(counter, "counter")
 
     }
 
@@ -28,7 +28,7 @@ function ProductList() {
 
 
     const itemCounter = (index, val) => {
-        console.log("clicked", counter)
+    
         setCounter(existingItems => {
             return existingItems.map((item, j) => {
                 return j === index ? val : item

@@ -1,14 +1,14 @@
-import React, { useRef, useState, useContext, useEffect } from "react";
+import React, { useRef, useState, useContext } from "react";
 import { Button, Form, Card, Alert, Spinner, Image } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { ProductContext } from "../contexts/productContext";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 
 const Login = () => {
-  const { users, setCurrentUserId, setCurrentUser } = useContext(ProductContext);
+  const { users, setCurrentUserId, setCurrentUser, setUsername } = useContext(ProductContext);
   const userEmailArr = users.map((user) => user.email);
-  const userIdArr = users.map((user) =>user.id);
   const userPassArr = users.map((user) => user.password);
+  const usernameArr = users.map((user) => user.username);
   const navigate = useNavigate();
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -21,15 +21,24 @@ const Login = () => {
     e.preventDefault();
     const currentEmail = emailRef.current.value;
     const currentPass = passwordRef.current.value;
-    const checkUserEmailFromList = userEmailArr.includes(currentEmail);
-    console.log("output filter user", checkUserEmailFromList);
+    let indexOfEmail = 0;
+    let checkUserEmailFromList = false;
+    userEmailArr.filter((item, index) => {
+
+      if (item === currentEmail) {
+        indexOfEmail = index;
+        return checkUserEmailFromList = true;
+      }
+    })
+    console.log("output filter user", checkUserEmailFromList + ' index is ' + indexOfEmail);
     if (checkUserEmailFromList) {
       setError1(false);
-      const checkUserPassFromList = userPassArr.includes(currentPass);
+      const checkUserPassFromList = userPassArr[indexOfEmail] === currentPass;
       if (checkUserPassFromList) {
         setError2(false);
-        setCurrentUser(currentEmail);   
-        setCurrentUserId((userEmailArr.indexOf(currentEmail))+1);
+        setCurrentUser(currentEmail);
+        setCurrentUserId((userEmailArr.indexOf(currentEmail)) + 1);
+        setUsername(usernameArr[indexOfEmail]);
         navigate("/");
       } else {
         setError2(true);
@@ -50,6 +59,8 @@ const Login = () => {
     setPasswordType("password");
     setPassEye(true);
   };
+
+
   return (
     <>
       {loading && (
