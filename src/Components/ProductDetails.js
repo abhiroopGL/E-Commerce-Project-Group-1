@@ -70,9 +70,9 @@ function ProductDetails() {
                     <strong> Quantity:</strong> <CounterInput value={1} min={1} max={50} onChange={(value) => {setCounter(value)}} />
                     </div>
 >>>>>>> 7d885aa735a7079e5c79623c7fd228ff5028b66d
-                    </div>
-                </div>
-            </div>
+                    </div >
+                </div >
+            </div >
         </>
     )
 }
