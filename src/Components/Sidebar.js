@@ -14,7 +14,7 @@ function Sidebar() {
             <Container className='p-4 bg-dark' >
                 <Offcanvas show={showSidebar} onHide={closeSidebar} className = "bg-dark text-white">
                     <Offcanvas.Header closeButton >
-                        <Offcanvas.Title style={{fontSize: "30px"}} >{currentUser}</Offcanvas.Title>
+                        <Offcanvas.Title style={{fontSize: "30px"}}>Hello, {currentUser}</Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
                         <ul style={{listStyle: "none", fontSize: "30px"}}  >
