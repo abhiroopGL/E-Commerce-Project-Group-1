@@ -11,7 +11,7 @@ function Invoice() {
   const navigate = useNavigate();
   return (
     <div
-      className="w-50 h-75 m-auto p-2 mt-2"
+      className="w-50 h-75 m-auto p-3 mt-5 mb-5"
       style={{ border: "2px solid grey" }}
     >
       <h3>MyShop</h3>

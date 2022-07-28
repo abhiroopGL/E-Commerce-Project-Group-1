@@ -20,7 +20,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/product-details/:id" element={<ProductDetails />} />
-          
+
           <Route path="/user-delivery-details"
             element={
               <PrivateRoute>

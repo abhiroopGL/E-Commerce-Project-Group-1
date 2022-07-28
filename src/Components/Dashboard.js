@@ -9,7 +9,7 @@ import { ProductContext } from '../contexts/productContext'
 function Dashboard() {
 
   const { showSidebar } = useContext(ProductContext);
-  
+
   return (
     <div className="App">
       <Header />

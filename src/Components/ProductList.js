@@ -10,7 +10,7 @@ function ProductList() {
 
         setCartProducts(prevCartProducts => {
             return [
-                ...prevCartProducts,item
+                ...prevCartProducts, item
             ]
         })
         console.log(counter, "counter")

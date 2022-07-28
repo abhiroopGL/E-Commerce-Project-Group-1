@@ -2,16 +2,16 @@ import axios from 'axios';
 import React, { createContext, useEffect, useState } from 'react';
 
 export const ProductContext = createContext();
-    
+
 
 export const ProductProvider = (props) => {
 
     const [productList, setProductList] = useState([]);
     const [users, setUsers] = useState([]);
-    const [currentUser, setCurrentUser ] = useState(null)
-    const [userDetails, setUserDetails ] = useState({})
+    const [currentUser, setCurrentUser] = useState(null)
+    const [userDetails, setUserDetails] = useState({})
     const [currentUserId, setCurrentUserId] = useState(null);
-    const [showSidebar,setShowSidebar] = useState(false);
+    const [showSidebar, setShowSidebar] = useState(false);
     const [cartProducts, setCartProducts] = useState([]);
     const [checkOut, setCheckOut] = useState(false);
     const [username, setUsername] = useState(null);
@@ -19,9 +19,9 @@ export const ProductProvider = (props) => {
     const [counter, setCounter] = useState(filledArray);
 
 
-    useEffect(() => { 
+    useEffect(() => {
         const products = async () => {
-            
+
             await axios.get('https://fakestoreapi.com/products')
                 .then((res) => {
                     setProductList(res.data);
@@ -53,7 +53,7 @@ export const ProductProvider = (props) => {
         currentUserId,
         setCurrentUserId,
         setUserDetails,
-        cartProducts, 
+        cartProducts,
         setCartProducts,
         setCurrentUser,
         currentUser,
@@ -62,7 +62,7 @@ export const ProductProvider = (props) => {
         setCheckOut,
         username,
         setUsername,
-        counter, 
+        counter,
         setCounter
     }
 

@@ -2,11 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
 import CounterInput from 'react-bootstrap-counter';
 import Table from 'react-bootstrap/Table';
-// import Button from 'react-bootstrap/Button';
-// import Card from 'react-bootstrap/Card';
-// import Container from 'react-bootstrap/Container';
-// import Dropdown from 'react-bootstrap/Dropdown';
-// import Header from './Header';
 
 
 import '../App.css'
@@ -66,10 +61,10 @@ function ProductDetails() {
                         </tbody>
                     </Table>
                     <div>
-                    <p><strong>Rating :</strong> <span style={{ background: "green", color: "#fff", padding: "2px 5px", borderRadius: "5px" }}>{item.rating.rate} ★	</span></p>
-                    <div className='w-25'>
-                        <CounterInput value={1} min={1} max={50} onChange={(value) => { setCounter(value); console.log(value) }} />
-                    </div>
+                        <p><strong>Rating :</strong> <span style={{ background: "green", color: "#fff", padding: "2px 5px", borderRadius: "5px" }}>{item.rating.rate} ★	</span></p>
+                        <div className='w-25'>
+                            <CounterInput value={1} min={1} max={50} onChange={(value) => { setCounter(value); console.log(value) }} />
+                        </div>
                     </div>
                 </div>
             </div>

@@ -8,7 +8,7 @@ import '../App.css'
 function Sidebar() {
     const closeSidebar = () => setShowSidebar(false);
 
-    const { showSidebar, setShowSidebar, username } = useContext(ProductContext);
+    const { showSidebar, setShowSidebar, username, currentUser } = useContext(ProductContext);
     return (
         <Container style={{ width: "200px" }} className='bg-dark' >
             <Offcanvas show={showSidebar} onHide={closeSidebar} className="bg-dark text-white">
@@ -20,7 +20,9 @@ function Sidebar() {
                         <li className="sidebarItem"><Link to="/" className="link">Home</Link></li>
                         <li className="sidebarItem"><Link to="/" className="link">About</Link></li>
                         <li className="sidebarItem"><Link to="/" className="link">Contact Us</Link></li>
-                        <li className="sidebarItem"><Link to="/login" className="link">Log Out</Link></li>
+                        {currentUser &&
+                            <li className="sidebarItem"><Link to="/login" className="link">Log Out</Link></li>
+                        }
                     </ul>
                 </Offcanvas.Body>
             </Offcanvas>

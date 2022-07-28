@@ -75,7 +75,7 @@ function Header() {
           <Modal.Title>Cart Items</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-         {cartProducts.length > 0 ?  <div id="Card-container">
+          {cartProducts.length > 0 ? <div id="Card-container">
             {
               cartProducts.map((item, index) => (
                 <Card key={index} className="mx-2 mt-1">
@@ -97,7 +97,7 @@ function Header() {
               ))
             }
           </div>
-          : <h2><center>Cart is empty</center></h2>}
+            : <h2><center>Cart is empty</center></h2>}
 
         </Modal.Body>
         <Modal.Footer>
