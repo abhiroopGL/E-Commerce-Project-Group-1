@@ -4,12 +4,12 @@ import { ProductContext } from '../contexts/productContext';
 import { Link } from "react-router-dom";
 import CounterInput from 'react-bootstrap-counter';
 function ProductList() {
- 
+
 
     const { productList, cartProducts, setCartProducts, setCheckOut, counter, setCounter } = useContext(ProductContext)
-  
+
     const addToCart = (item) => {
-        
+
         setCartProducts(prevCartProducts => {
             return [
                 ...prevCartProducts,
@@ -24,11 +24,8 @@ function ProductList() {
     }
 
 
-
-
-
     const itemCounter = (index, val) => {
-    
+
         setCounter(existingItems => {
             return existingItems.map((item, j) => {
                 return j === index ? val : item
@@ -36,14 +33,16 @@ function ProductList() {
         })
     }
 
+    setCheckOut(cartProducts.length > 0 ? true : false);
+
     return (
         <>
 
             <div id="Card-container">
                 {
-                    
+
                     productList.map((item, index) => (
-                        
+
                         <Card key={index} className="mx-2 mt-4 pt-2 productCard">
                             <Link to={`/product-details/${item.id}`} >
                                 <Card.Img variant="top" src={item.image} style={{ height: '35vh', width: '28vh' }} />
@@ -61,7 +60,7 @@ function ProductList() {
 
                                     <Dropdown>
                                         <Dropdown.Toggle variant="success">
-                                           1
+                                            1
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu>
                                             <Dropdown.Item onClick={() => itemCounter(item.id, 1)}>
@@ -81,7 +80,7 @@ function ProductList() {
                                             </Dropdown.Item>
                                         </Dropdown.Menu>
                                     </Dropdown>
-                                 
+
                                 </div>
                             </Card.Body>
                         </Card>
