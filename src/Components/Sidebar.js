@@ -10,14 +10,13 @@ function Sidebar() {
 
     const { showSidebar, setShowSidebar, currentUser } = useContext(ProductContext);
     return (
-        <>
-            <Container className='p-4 bg-dark' >
+            <Container style={{width: "200px"}} className='bg-dark' >
                 <Offcanvas show={showSidebar} onHide={closeSidebar} className = "bg-dark text-white">
                     <Offcanvas.Header closeButton >
-                        <Offcanvas.Title style={{fontSize: "30px"}}>Hello, {currentUser}</Offcanvas.Title>
+                        <Offcanvas.Title style={{fontSize: "25px"}}>Hello, {currentUser}</Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
-                        <ul style={{listStyle: "none", fontSize: "30px"}}  >
+                        <ul style={{listStyle: "none", fontSize: "20px"}}  >
                             <li className="sidebarItem"><Link to = "/" className = "link">Home</Link></li>
                             <li className="sidebarItem"><Link to = "/" className = "link">About</Link></li>
                             <li className="sidebarItem"><Link to = "/" className = "link">Contact Us</Link></li>
@@ -26,7 +25,6 @@ function Sidebar() {
                     </Offcanvas.Body>
                 </Offcanvas>
             </Container>
-        </>
     )
 }
 
