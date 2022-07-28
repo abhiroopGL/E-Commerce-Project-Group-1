@@ -7,7 +7,6 @@ import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 const Login = () => {
   const { users, setCurrentUserId, setCurrentUser } = useContext(ProductContext);
   const userEmailArr = users.map((user) => user.email);
-  const userIdArr = users.map((user) =>user.id);
   const userPassArr = users.map((user) => user.password);
   const navigate = useNavigate();
   const emailRef = useRef();
