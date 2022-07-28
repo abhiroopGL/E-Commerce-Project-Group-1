@@ -4,15 +4,13 @@ import { Button, Card, Container, Modal, Form, Nav, Navbar, Badge } from "react-
 import { BsList } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { BsFillTrashFill } from "react-icons/bs"
-//import NavDropdown from "react-bootstrap/NavDropdown";
 import { Cart } from "react-bootstrap-icons";
 import { ProductContext } from "../contexts/productContext";
-//import * as Icon from 'react-bootstrap-icons';
 
 
 function Header() {
   const navigate = useNavigate();
-  const { setShowSidebar, currentUser, currentUserId, cartProducts, setCartProducts, checkOut } = useContext(ProductContext);
+  const { setShowSidebar, currentUser, currentUserId, cartProducts, setCartProducts, checkOut, setCheckOut } = useContext(ProductContext);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -28,7 +26,7 @@ function Header() {
   console.warn(currentUser + '  ' + currentUserId)
   console.log("cartProducts", cartProducts);
 
-
+  setCheckOut(cartProducts.length > 0 ? true : false)
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg" id="header">
@@ -77,7 +75,7 @@ function Header() {
           <Modal.Title>Cart Items</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div id="Card-container">
+         {cartProducts.length > 0 ?  <div id="Card-container">
             {
               cartProducts.map((item, index) => (
                 <Card key={index} className="mx-2 mt-1">
@@ -99,6 +97,7 @@ function Header() {
               ))
             }
           </div>
+          : <h2><center>Cart is empty</center></h2>}
 
         </Modal.Body>
         <Modal.Footer>
