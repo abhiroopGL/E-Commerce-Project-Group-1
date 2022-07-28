@@ -49,14 +49,14 @@ function Header() {
           >
 
           </Nav>
-          <Form className="d-flex">
+          <Form className="d-flex mx-2">
             <Form.Control
               type="search"
               placeholder="Search"
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Button className="headerButton" variant="outline-success">Search</Button>
           </Form>
           {
             currentUser !== null ? (
@@ -66,9 +66,9 @@ function Header() {
                 </Button>
               </Nav.Link>
             ) : (
-              <Link to={`/login`} style={{ width: '15vh', textDecoration: 'none', color: 'white' }}>
+              <Button variant="outline-success" className="headerButton" onClick={()=>navigate('/login')}>
                 Login
-              </Link>
+              </Button>
             )}
         </Navbar.Collapse>
       </Container>

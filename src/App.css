@@ -40,6 +40,26 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+.headerButton {
+  width: 15vh;
+  text-decoration: none;
+  color: green;
+}
+ .productCard{
+  width: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  margin-top: 3vh;
+ }
+
+ .cardBody{
+  display: flex;
+   flex-direction: column;
+    justify-content: center;
+     align-items: center
+ }
 
 #thanksLayout{
   text-align: center;
