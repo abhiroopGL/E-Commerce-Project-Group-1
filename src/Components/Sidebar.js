@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Container, Offcanvas } from 'react-bootstrap';
+import {Container, Offcanvas } from 'react-bootstrap';
 import {ProductContext} from '../contexts/productContext'
 import {Link} from "react-router-dom";
 import '../App.css'

@@ -1,18 +1,11 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import Container from "react-bootstrap/Container";
-import Modal from 'react-bootstrap/Modal';
-import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import {Button, Card, Container, Modal, Form, Nav, Navbar, Badge} from "react-bootstrap";
 import { BsList } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import {BsFillTrashFill} from "react-icons/bs"
-
 //import NavDropdown from "react-bootstrap/NavDropdown";
-import { CartPlus } from "react-bootstrap-icons";
+import { Cart } from "react-bootstrap-icons";
 import { ProductContext } from "../contexts/productContext";
 //import * as Icon from 'react-bootstrap-icons';
 function Header() {
@@ -61,8 +54,8 @@ function Header() {
           {
             currentUser !== null ? (
               <Nav.Link>
-                <Button onClick={handleShow} className="mx-3">
-                  <CartPlus size={30} width="12vh" className="m-10 fa-solid fa-cart-shopping text-light" color="white" />
+                <Button onClick={handleShow} variant="outline-success" className="mx-3">
+                  <Cart size={30} className="m-10 fa-solid fa-cart-shopping text-light" color="white" /><Badge bg="dark">({cartProducts.length})</Badge>
                 </Button>
               </Nav.Link>
             ) : (
