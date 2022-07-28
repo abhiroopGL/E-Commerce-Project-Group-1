@@ -18,10 +18,10 @@ function Sidebar() {
                     </Offcanvas.Header>
                     <Offcanvas.Body>
                         <ul style={{listStyle: "none", fontSize: "30px"}}  >
-                        <li > <Link to = "/" className = "link">Home</Link></li>
-                            <li><Link to = "/" className = "link">About</Link></li>
-                            <li><Link to = "/" className = "link">Contact Us</Link></li>
-                            <li><Link to = "/login" className = "link">Log Out</Link></li>
+                            <li className="sidebarItem"><Link to = "/" className = "link">Home</Link></li>
+                            <li className="sidebarItem"><Link to = "/" className = "link">About</Link></li>
+                            <li className="sidebarItem"><Link to = "/" className = "link">Contact Us</Link></li>
+                            <li className="sidebarItem"><Link to = "/login" className = "link">Log Out</Link></li>
                         </ul>
                     </Offcanvas.Body>
                 </Offcanvas>
