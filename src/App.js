@@ -7,7 +7,6 @@ import ForgotPassword from "./Components/ForgotPassword";
 import ProductDetails from "./Components/ProductDetails";
 import Dashboard from "./Components/Dashboard";
 import UserDeliveryDetails from "./Components/UserDeliveryDetails";
-import { Cart } from "react-bootstrap-icons";
 import PrivateRoute from "./Components/PrivateRoute";
 import ThanksForShopping from "./Components/ThanksForShopping";
 import Invoice from "./Components/Invoice";
@@ -22,7 +21,6 @@ function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/product-details/:id" element={<ProductDetails />} />
           <Route path="/user-delivery-details" element={<UserDeliveryDetails />} />
-          <Route path="cart/:id" element={<PrivateRoute> <Cart /></PrivateRoute> }/>
           <Route path="/invoice" element={<Invoice />} />
           <Route path="/thanks-for-shopping" element={<ThanksForShopping />} />
 
