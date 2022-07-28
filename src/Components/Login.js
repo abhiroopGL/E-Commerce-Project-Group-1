@@ -21,11 +21,19 @@ const Login = () => {
     e.preventDefault();
     const currentEmail = emailRef.current.value;
     const currentPass = passwordRef.current.value;
-    const checkUserEmailFromList = userEmailArr.includes(currentEmail);
-    console.log("output filter user", checkUserEmailFromList);
+    let indexOfEmail = 0;
+    let checkUserEmailFromList = false;
+    userEmailArr.filter((item,index)=>{
+      
+      if(item === currentEmail){
+        indexOfEmail=index;
+        return checkUserEmailFromList = true;
+      }
+    })
+    console.log("output filter user", checkUserEmailFromList+' index is '+indexOfEmail);
     if (checkUserEmailFromList) {
       setError1(false);
-      const checkUserPassFromList = userPassArr.includes(currentPass);
+      const checkUserPassFromList = userPassArr[indexOfEmail] === currentPass;
       if (checkUserPassFromList) {
         setError2(false);
         setCurrentUser(currentEmail);   
