@@ -54,7 +54,7 @@ function Header() {
           {
             currentUser !== null ? (
               <Nav.Link>
-                <Button onClick={handleShow} variant="outline-success" className="mx-3">
+                <Button onClick={handleShow} variant="outline-success" className="mx-3 headerButton">
                   <Cart size={30} className="m-10 fa-solid fa-cart-shopping text-light" color="white" /><Badge bg="dark">({cartProducts.length})</Badge>
                 </Button>
               </Nav.Link>
@@ -74,17 +74,22 @@ function Header() {
         <div id="Card-container">
             {
                 cartProducts.map((item, index) => (
-                    <Card key={index} className="mx-2 mt-4" style={{ border: 'none', width: '40vh', diplay: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: '3vh' }}>
+                    <Card key={index} className="mx-2 mt-1">
+                        <div style={{ border: 'none', width: '40vh', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start', marginTop: '3vh' }}>
                         <Link to={`/product-details/${item.id}`} >
-                            <Card.Img variant="top" src={item.image} style={{ height: '35vh', width: '28vh' }} />
+                            <Card.Img variant="top" src={item.image} style={{ height: '15vh', width: '10vh' }} />
                         </Link>
                         <Card.Body >
                             <Card.Title>{(item.title).slice(0, 18).concat("...")}</Card.Title>
-                            <p>₹ {item.price}</p>
-                            <Button onClick = {() => deleteItem(item.id)}><BsFillTrashFill/>Delete from cart</Button>
-                                                      
+                            <p>₹ {item.price}</p>                                                      
                         </Card.Body>
+                        </div>
+                        <Card.Footer className="d-flex justify-content-center">
+                        <Button onClick = {() => deleteItem(item.id)}><BsFillTrashFill/>Delete from cart</Button>
+                        </Card.Footer>
+                       
                     </Card>
+                    
                 ))
             }
         </div>
