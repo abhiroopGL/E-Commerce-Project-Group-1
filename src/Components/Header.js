@@ -66,10 +66,8 @@ function Header() {
                 </Button>
               </Nav.Link>
             ) : (
-              <Button variant="outline-success">
-              <Link to={`/login`} className="headerButton">
+              <Button variant="outline-success" className="headerButton" onClick={()=>navigate('/login')}>
                 Login
-              </Link>
               </Button>
             )}
         </Navbar.Collapse>
