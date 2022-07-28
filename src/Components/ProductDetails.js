@@ -61,7 +61,7 @@ function ProductDetails() {
                     <div>
                     <p><strong>Rating :</strong> <span style={{ background: "green", color: "#fff", padding: "2px 5px", borderRadius: "5px" }}>{item.rating.rate} ★	</span></p>
                     <div className='w-25'>
-                        <CounterInput value={1} min={1} max={50} onChange={(value) => { setCounter(value); console.log(value) }} />
+                    <strong> Quantity:</strong> <CounterInput value={1} min={1} max={50} onChange={(value) => {setCounter(value)}} />
                     </div>
                     </div>
                 </div>
