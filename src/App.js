@@ -20,9 +20,26 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/product-details/:id" element={<ProductDetails />} />
-          <Route path="/user-delivery-details" element={<UserDeliveryDetails />} />
-          <Route path="/invoice" element={<Invoice />} />
-          <Route path="/thanks-for-shopping" element={<ThanksForShopping />} />
+          
+          <Route path="/user-delivery-details"
+            element={
+              <PrivateRoute>
+                <UserDeliveryDetails />
+              </PrivateRoute>}
+          />
+
+          <Route path="/invoice"
+            element={
+              <PrivateRoute>
+                <Invoice />
+              </PrivateRoute>} />
+
+          <Route path="/thanks-for-shopping"
+            element={
+              <PrivateRoute>
+                <ThanksForShopping />
+              </PrivateRoute>}
+          />
 
         </Routes>
       </ProductProvider>

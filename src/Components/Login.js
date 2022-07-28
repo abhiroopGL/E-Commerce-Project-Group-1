@@ -5,9 +5,10 @@ import { ProductContext } from "../contexts/productContext";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 
 const Login = () => {
-  const { users, setCurrentUserId, setCurrentUser } = useContext(ProductContext);
+  const { users, setCurrentUserId, setCurrentUser, setUsername } = useContext(ProductContext);
   const userEmailArr = users.map((user) => user.email);
   const userPassArr = users.map((user) => user.password);
+  const usernameArr = users.map((user) => user.username);
   const navigate = useNavigate();
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -22,21 +23,22 @@ const Login = () => {
     const currentPass = passwordRef.current.value;
     let indexOfEmail = 0;
     let checkUserEmailFromList = false;
-    userEmailArr.filter((item,index)=>{
-      
-      if(item === currentEmail){
-        indexOfEmail=index;
+    userEmailArr.filter((item, index) => {
+
+      if (item === currentEmail) {
+        indexOfEmail = index;
         return checkUserEmailFromList = true;
       }
     })
-    console.log("output filter user", checkUserEmailFromList+' index is '+indexOfEmail);
+    console.log("output filter user", checkUserEmailFromList + ' index is ' + indexOfEmail);
     if (checkUserEmailFromList) {
       setError1(false);
       const checkUserPassFromList = userPassArr[indexOfEmail] === currentPass;
       if (checkUserPassFromList) {
         setError2(false);
-        setCurrentUser(currentEmail);   
-        setCurrentUserId((userEmailArr.indexOf(currentEmail))+1);
+        setCurrentUser(currentEmail);
+        setCurrentUserId((userEmailArr.indexOf(currentEmail)) + 1);
+        setUsername(usernameArr[indexOfEmail]);
         navigate("/");
       } else {
         setError2(true);
@@ -57,6 +59,8 @@ const Login = () => {
     setPasswordType("password");
     setPassEye(true);
   };
+
+
   return (
     <>
       {loading && (

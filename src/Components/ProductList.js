@@ -4,7 +4,7 @@ import { ProductContext } from '../contexts/productContext';
 import { Link } from "react-router-dom";
 function ProductList() {
 
-    const { productList, currentUserId, cartProducts, setCartProducts, setCheckOut } = useContext(ProductContext)
+    const { productList, cartProducts, setCartProducts, setCheckOut } = useContext(ProductContext)
     const addToCart = (item) => {
         setCartProducts(prevCartProducts => {
             return [
@@ -13,11 +13,7 @@ function ProductList() {
             ]
         })
     }
-
-    const viewCartProducts = () => {
-        console.log("cart products", cartProducts)
-    }
-    setCheckOut(cartProducts.length>0?true:false);
+    setCheckOut(cartProducts.length > 0 ? true : false);
     return (
         <div id="Card-container">
             {
@@ -29,8 +25,8 @@ function ProductList() {
                         <Card.Body className='cardBody'>
                             <Card.Title>{(item.title).slice(0, 18).concat("...")}</Card.Title>
                             <p>₹ {item.price}</p>
-                            <Button variant="primary" onClick = {() => {addToCart(item); }}>Add to Cart</Button>
-                            
+                            <Button variant="primary" onClick={() => { addToCart(item); }}>Add to Cart</Button>
+
                         </Card.Body>
                     </Card>
                 ))

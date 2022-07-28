@@ -14,6 +14,7 @@ export const ProductProvider = (props) => {
     const [showSidebar,setShowSidebar] = useState(false);
     const [cartProducts, setCartProducts] = useState([]);
     const [checkOut, setCheckOut] = useState(false);
+    const [username, setUsername] = useState(null);
 
 
     useEffect(() => { 
@@ -57,6 +58,8 @@ export const ProductProvider = (props) => {
         userDetails,
         checkOut,
         setCheckOut,
+        username,
+        setUsername,
     }
 
     return (
